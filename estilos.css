@@ -15,7 +15,7 @@ header {
 .wrapper{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:left;
     margin: 18%;
 }
 #home{
@@ -27,7 +27,7 @@ header {
     width: 50%;
     margin: 10%;
     background: #ffffff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -138,4 +138,31 @@ form {
 .exercise-list li, .meal-plans li {
     margin-bottom: 10px;
 }
+#img3{
+    width: 250px;
+    height: 250px;
 
+}
+.recomendaciones{
+    margin-top: 15%;
+    width: 50%;
+    margin: 59%;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#reco{
+    width: 60%;
+    padding: 20px;
+    margin: auto;
+}
+#img3{
+    width: 100%;
+    padding-left: 2px;
+}
+#img3 img{
+    width: 450px;
+    height: auto;
+    border-radius: 8px;
+}
