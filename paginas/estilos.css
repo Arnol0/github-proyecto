@@ -1,0 +1,168 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #009688;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items:left;
+    margin: 18%;
+}
+#home{
+    width: 60%;
+    padding: 20px;
+    margin: auto;
+}
+.container {
+    width: 50%;
+    margin: 10%;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.imagen{
+    width: 40%;
+    padding-left: 25px;
+}
+.imagen img{
+    width: 345px;
+    height: auto;
+    border-radius: 8px;
+
+}
+
+h1, h2 {
+    color: #009688;
+}
+.header{
+    width: 100%;
+    margin: 0%;
+    padding: 0.15px;
+    color: #ffffff;
+}
+
+.nav {
+    display: -ms-flex;
+    justify-content: center;
+    background-color: #00796b;
+    padding: 10px 0;
+}
+
+.nav a {
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    background-color: #004d40;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #009688;
+    color: #fff;
+}
+
+form {
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.cta {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.cta a {
+    padding: 10px 20px;
+    background-color: #009688;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta a:hover {
+    background-color: #00796b;
+}
+
+.dashboard-stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.dashboard-stats div {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    background: #e0f2f1;
+    border-radius: 5px;
+}
+
+.exercise-list, .meal-plans {
+    margin-top: 20px;
+}
+
+.exercise-list ul, .meal-plans ul {
+    list-style: none;
+    padding: 0;
+}
+
+.exercise-list li, .meal-plans li {
+    margin-bottom: 10px;
+}
+#img3{
+    width: 250px;
+    height: 250px;
+
+}
+.recomendaciones{
+    margin-top: 15%;
+    width: 50%;
+    margin: 59%;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#reco{
+    width: 60%;
+    padding: 20px;
+    margin: auto;
+}
+#img3{
+    width: 100%;
+    padding-left: 2px;
+}
+#img3 img{
+    width: 450px;
+    height: auto;
+    border-radius: 8px;
+}
