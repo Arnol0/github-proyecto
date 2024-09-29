@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('./models/User'); // Ajusta la ruta según tu estructura
 
 // Ruta para registrar un nuevo usuario
-router.post('./registro', async (req, res) => {
+router.post('/register', async (req, res) => {
     const { nombre, correo, password } = req.body;
     try {
         const nuevoUsuario = new User({ nombre, correo, password });
