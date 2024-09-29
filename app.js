@@ -16,7 +16,7 @@ mongoose.connect('mongodb+srv://72963047:cAZKWOSTxC57BxJK@cluster0.wjj7u.mongodb
 
 // Rutas de autenticación
 app.use('/api', loginRouter); // Asegúrate de que este router esté correctamente definido
-app.use('/api', registerRouter); // Asegúrate de que este router esté correctamente definido
+//app.use('/api', registerRouter); // Asegúrate de que este router esté correctamente definido
 
 // Iniciar el servidor
 app.listen(port, () => {
