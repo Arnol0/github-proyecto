@@ -4,13 +4,13 @@ document.getElementById('register-form').addEventListener('submit', async functi
     // Obtener los valores de los campos
     const nombre = document.getElementById('register-name').value;
     const correo = document.getElementById('register-email').value;
-    const password = document.getElementById('register-password').value;
+    const contraseña = document.getElementById('register-password').value; // Cambia a 'contraseña'
 
     // Crear el objeto de datos
     const userData = {
         nombre: nombre,
         correo: correo,
-        password: password
+        contraseña: contraseña // Cambia a 'contraseña'
     };
 
     // Enviar los datos al servidor

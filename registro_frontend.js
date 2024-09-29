@@ -4,9 +4,9 @@ const User = require('./models/User'); // Ajusta la ruta según tu estructura
 
 // Ruta para registrar un nuevo usuario
 router.post('/register', async (req, res) => {
-    const { nombre, correo, password } = req.body;
+    const { nombre, correo, contraseña } = req.body;
     try {
-        const nuevoUsuario = new User({ nombre, correo, password });
+        const nuevoUsuario = new User({ nombre, correo, contraseña });
         await nuevoUsuario.save(); // Guarda el nuevo usuario en la base de datos
         res.status(201).json({ message: 'Usuario registrado exitosamente' });
     } catch (error) {
