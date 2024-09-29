@@ -6,7 +6,6 @@ const User = require('./models/User'); // Asegúrate de que la ruta sea correcta
 // Ruta para registrar un nuevo usuario
 router.post('/register', async (req, res) => {
     console.log('Datos recibidos:', req.body); // Esto debería mostrar los datos en la consola
-
     const { nombre, correo, contraseña } = req.body;
 
     try {
