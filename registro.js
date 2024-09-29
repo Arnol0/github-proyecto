@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('./models/User'); // Asegúrate de tener el modelo User correctamente definido
+const User = require('./models/User'); // Modelo para interactuar con MongoDB
 
 // Ruta para registrar un nuevo usuario
 router.post('/register', async (req, res) => {
