@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const loginRouter = require('./login');
-const registerRouter = require('./registro.js');
 const bodyParser = require('body-parser');
 
 const app = express();
