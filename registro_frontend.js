@@ -1,4 +1,4 @@
-document.getElementById('register_form').addEventListener('submit', async function(event) {
+document.getElementById('register-form').addEventListener('submit', async function(event) {
     event.preventDefault(); // Evitar el envío por defecto del formulario
 
     // Obtener los valores de los campos

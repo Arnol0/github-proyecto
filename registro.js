@@ -1,3 +1,8 @@
+const express = require('express');
+const router = express.Router();
+const User = require('./models/User'); // Asegúrate de tener el modelo User correctamente definido
+
+// Ruta para registrar un nuevo usuario
 router.post('/register', async (req, res) => {
     const { nombre, correo, password } = req.body;
 
@@ -10,3 +15,5 @@ router.post('/register', async (req, res) => {
         res.status(500).json({ message: 'Error en el registro', error });
     }
 });
+
+module.exports = router;
