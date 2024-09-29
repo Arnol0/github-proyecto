@@ -1,9 +1,12 @@
+// registro_frontend.js
 const express = require('express');
 const router = express.Router();
-const User = require('./models/User'); // Ajusta la ruta según tu estructura
+const User = require('./models/User'); // Asegúrate de que la ruta sea correcta
 
 // Ruta para registrar un nuevo usuario
 router.post('/register', async (req, res) => {
+    console.log('Datos recibidos:', req.body); // Esto debería mostrar los datos en la consola
+
     const { nombre, correo, contraseña } = req.body;
 
     try {
@@ -16,5 +19,7 @@ router.post('/register', async (req, res) => {
     }
 });
 
+
 module.exports = router;
+
 
