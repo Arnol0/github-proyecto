@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('./models/User'); // Ajusta la ruta según sea necesario
-
+const registro = require('./registr')
 // Ruta para registrar un nuevo usuario
 router.post('/registro', async (req, res) => {
     const { nombre, correo, password } = req.body;
