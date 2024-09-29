@@ -1,7 +1,7 @@
 {
   "nombre": "gerardo",
   "correo": "gerardo@gmail.com",
-  "ontraseña": "baserkdf25",
+  "contraseña": "baserkdf25",
   
   "dependencies": {
     "bcryptjs": "^2.4.3",

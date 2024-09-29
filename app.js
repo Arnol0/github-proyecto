@@ -4,7 +4,7 @@ const loginRouter = require('./login');
 const registerRouter = require('./registro_frontend');
 const bodyParser = require('body-parser');
 
-mongoose.set('debug', true);
+
 
 const app = express();
 const port = process.env.PORT || 3000;
