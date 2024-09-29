@@ -1,6 +1,11 @@
 {
   "nombre": "gerardo",
   "correo": "gerardo@gmail.com",
-  "contraseña": "baserkdf25"
-
+  "ontraseña": "baserkdf25",
+  
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.0",
+    "mongoose": "^8.7.0"
+  }
 }
