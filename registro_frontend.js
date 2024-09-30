@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const User = require('./models/User'); // Ajusta la ruta según tu estructura de carpetas
+const User = require('./models/User'); // Asegúrate de que la ruta sea correcta
 const bcrypt = require('bcryptjs');
 
 // Ruta para registrar un nuevo usuario
 router.post('/register', async (req, res) => {
     const { nombre, correo, contraseña } = req.body;
 
-    // Log para ver qué datos se están recibiendo
-    console.log('Datos recibidos:', req.body);
+    console.log('Datos recibidos:', req.body); // Verifica qué datos llegan
 
     // Validar que todos los campos estén presentes
     if (!nombre || !correo || !contraseña) {
@@ -23,7 +22,12 @@ router.post('/register', async (req, res) => {
         res.status(201).json({ message: 'Usuario registrado exitosamente' });
     } catch (error) {
         console.error('Error al registrar usuario:', error);
-        res.status(500).json({ message: 'Error interno del servidor' });
+        if (error.name === 'ValidationError') {
+            return res.status(400).json({ message: 'Error en el registro', errors: error.errors });
+        } else if (error.code === 11000) {
+            return res.status(400).json({ message: 'El correo ya está en uso' });
+        }
+        res.status(500).json({ message: 'Error interno del servidor', error: error.message });
     }
 });
 

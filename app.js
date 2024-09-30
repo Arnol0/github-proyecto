@@ -4,8 +4,6 @@ const loginRouter = require('./login');
 const registerRouter = require('./registro_frontend');
 const bodyParser = require('body-parser');
 
-
-
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -18,12 +16,13 @@ mongoose.connect('mongodb+srv://72963047:cAZKWOSTxC57BxJK@cluster0.wjj7u.mongodb
     .catch((error) => console.error('Error al conectar a MongoDB:', error));
 
 // Rutas de autenticación
+app.use('/api', registerRouter); 
 app.use('/api', loginRouter); // Asegúrate de que este router esté correctamente definido
-app.use('/api', registerRouter); // Asegúrate de que este router esté correctamente definido
 
 app.use((req, res) => {
     res.status(404).send('Ruta no encontrada');
 });
+
 // Iniciar el servidor
 app.listen(port, () => {
     console.log(`Servidor ejecutándose en http://localhost:${port}`);
