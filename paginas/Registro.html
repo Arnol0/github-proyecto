@@ -17,7 +17,7 @@
 
     <div class="container" id="register">
         <h2>Registro</h2>
-        <form id="register-form">
+        <form  action= "/api/register" method="post"  id="register-form">
             <div class="form-group">
                 <label for="register-name">Nombre:</label>
                 <input type="text" id="register-name" required>
@@ -48,7 +48,7 @@
             const userData = {
                 nombre: nombre,
                 correo: correo,
-                contraseña: password // Aquí se usa correctamente
+                contraseña: contraseña // Aquí se usa correctamente
             };
 
             // Enviar los datos al servidor
