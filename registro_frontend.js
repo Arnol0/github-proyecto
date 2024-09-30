@@ -9,6 +9,7 @@ router.post('/register', async (req, res) => {
     const { nombre, correo, contraseña } = req.body;
 
     // Log para ver qué datos se están recibiendo
+    
     console.log('Datos recibidos:', req.body);
 
     // Validar que todos los campos estén presentes
@@ -17,7 +18,7 @@ router.post('/register', async (req, res) => {
     }
 
     try {
-        // Hashear la contraseña
+        console.log('Datos recibidos antes de guardar:', { nombre, correo, contraseña });
         const hashedPassword = await bcrypt.hash(contraseña, 10);
         const newUser = new User({ nombre, correo, contraseña: hashedPassword });
         await newUser.save();
@@ -32,6 +33,8 @@ router.post('/register', async (req, res) => {
         res.status(500).json({ message: 'Error interno del servidor', error: error.message });
     }
 });
+
+
 
 
 module.exports = router;
