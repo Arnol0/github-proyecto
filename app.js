@@ -8,7 +8,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Middleware para parsear el cuerpo de las solicitudes
-app.use(express.json()); // Asegúrate de que esto esté presente
+
+
+// Middleware para procesar datos en formato JSON
+app.use(bodyParser.json());  // Procesar datos JSON
+app.use(bodyParser.urlencoded({ extended: true })) // Asegúrate de que esto esté presente
 
 // Conectar a MongoDB
 mongoose.connect('mongodb+srv://72963047:cAZKWOSTxC57BxJK@cluster0.wjj7u.mongodb.net/Información?retryWrites=true&w=majority&appName=Cluster0', { useNewUrlParser: true, useUnifiedTopology: true })
