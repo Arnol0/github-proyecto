@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Servir archivos estáticos desde la carpeta 'paginas'
-app.use(express.static(path.join(__dirname, 'paginas')));
+app.use(express.static(path.join(__dirname, 'github;proyecto')));
 
 // Conexión a MongoDB
 //const mongo_uri = process.env.MONGO_URI;
