@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'github;proyecto')));
 
 // Conexión a MongoDB
-//const mongo_uri = process.env.MONGO_URI;
+
 const mongo_uri = 'mongodb+srv://72963047:cAZKWOSTxC57BxJK@cluster0.wjj7u.mongodb.net/Información?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(mongo_uri, { useNewUrlParser: true, useUnifiedTopology: true })
