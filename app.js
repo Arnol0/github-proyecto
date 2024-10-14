@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 const User = require('./models/User'); // Asegúrate de que el modelo está bien importado
 
 const app = express();
+const cors = require('cors');
+app.use(cors());
 
 // Middleware para procesar datos JSON y formularios
 app.use(bodyParser.json());
