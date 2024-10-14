@@ -32,6 +32,7 @@ mongoose.connect(MONGO_URI)
 
 // Ruta para registrar usuario
 app.post('/register', async (req, res) => {
+    console.log('Registro de usuario:', req.body);
     const { nombre, correo, contraseña } = req.body;
 
     if (!nombre || !correo || !contraseña) {
@@ -63,6 +64,7 @@ app.post('/register', async (req, res) => {
 
 
 app.post('/authenticate', async (req, res) => {
+    console.log('Autenticación de usuario:', req.body);
     const { correo, contraseña } = req.body;
 
     if (!correo || !contraseña) {
