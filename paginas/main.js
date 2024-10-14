@@ -2,9 +2,9 @@ async function handleRegister(event) {
     event.preventDefault();
 
     const formData = {
-        nombre: document.getElementById('nombre').value,
-        correo: document.getElementById('correo').value,
-        contraseña: document.getElementById('contraseña').value,
+        nombre: document.getElementById('register-name').value,  // Cambié 'nombre' por 'register-name'
+        correo: document.getElementById('register-email').value, // Cambié 'correo' por 'register-email'
+        contraseña: document.getElementById('register-password').value, // Cambié 'contraseña' por 'register-password'
     };
 
     const response = await fetch('/register', { // Asegúrate de que la ruta es '/register'
@@ -25,4 +25,4 @@ async function handleRegister(event) {
 }
 
 // Asignar el manejador de eventos al formulario
-document.getElementById('registerForm').addEventListener('submit', handleRegister);  
+document.getElementById('register-form').addEventListener('submit', handleRegister); // Asignamos la función

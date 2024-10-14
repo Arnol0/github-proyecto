@@ -37,28 +37,28 @@
 
     <script >
         document.getElementById('register-form').addEventListener('submit', async function (event) {
-        event.preventDefault(); // Prevenir el envío del formulario
+            event.preventDefault(); // Prevenir el envío del formulario
 
-        const nombre = document.getElementById('register-name').value;
-        const correo = document.getElementById('register-email').value;
-        const contraseña = document.getElementById('register-password').value;
+            const nombre = document.getElementById('register-name').value;
+            const correo = document.getElementById('register-email').value;
+            const contraseña = document.getElementById('register-password').value;
 
-        const response = await fetch('/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json', // Establecer el tipo de contenido
-            },
-            body: JSON.stringify({ nombre, correo, contraseña }) // Convertir los datos a JSON
+            const response = await fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json', // Establecer el tipo de contenido
+                },
+                body: JSON.stringify({ nombre, correo, contraseña }) // Convertir los datos a JSON
+            });
+
+            const result = await response.json(); // Obtener la respuesta en formato JSON
+
+            if (response.ok) {
+                alert(result.message); // Mostrar mensaje de éxito
+            } else {
+                alert(result.message || 'Error desconocido'); // Mostrar mensaje de error
+            }
         });
-
-        const result = await response.json(); // Obtener la respuesta en formato JSON
-
-        if (response.ok) {
-            alert(result.message); // Mostrar mensaje de éxito
-        } else {
-            alert(result.message); // Mostrar mensaje de error
-        }
-    });
     </script>
 
     <footer>
