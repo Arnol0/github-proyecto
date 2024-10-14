@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'github;proyecto')));
 
 // const MONGO_URI = 'mongodb+srv://72963047:cAZKWOSTxC57BxJK@cluster0.wjj7u.mongodb.net/Información?retryWrites=true&w=majority&appName=Cluster0';
 
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
 // Utilizando la variable de entorno para la URI de MongoDB
 const MONGO_URI = process.env.MONGO_URI;
@@ -29,7 +29,7 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
         console.error('Error conectando a MongoDB:', err);
         process.exit(1); // Salir si hay error
     });
-    
+
 // Ruta para registrar usuario
 app.post('/register', async (req, res) => {
     const { nombre, correo, contraseña } = req.body;
