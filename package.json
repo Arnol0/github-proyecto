@@ -1,12 +1,18 @@
 {
-  "nombre": "gerardo",
-  "correo": "gerardo@gmail.com",
-  "contraseña": "baserkdf25",
+  "name": "github-proyecto",
+  "version": "1.0.0",
+  "description": "ayudar en la salud",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.3",
     "express": "^4.21.0",
     "mongodb": "^6.9.0",
     "mongoose": "^8.7.0"
-  }
+  },
+  "author": "arnol",
+  "license": "MI"
 }
