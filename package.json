@@ -1,7 +1,7 @@
 {
   "name": "github-proyecto",
   "version": "1.0.0",
-  "description": "ayudar en la salud",
+  "description": "Descripción de tu proyecto",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
@@ -13,6 +13,9 @@
     "mongodb": "^6.9.0",
     "mongoose": "^8.7.0"
   },
-  "author": "arnol",
-  "license": "MI"
+  "author": "Gerardo",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.6"
+  }
 }
