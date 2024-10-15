@@ -30,7 +30,39 @@
         </form>
         
     </div>
-    <script src="/login.js"></script>
+    <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                document.getElementById('login-form').addEventListener('submit', async (event) => {
+                    event.preventDefault();
+            
+                    const response = await fetch('http://localhost:3000/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            correo: document.getElementById('login-email').value,
+                            contraseña: document.getElementById('login-password').value,
+                        }),
+                    });
+            
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        console.error('Error en la solicitud:', errorText);
+                        alert('Error en el inicio de sesión: ' + errorText);
+                    } else {
+                        const result = await response.json();
+                        console.log('Inicio de sesión exitoso:', result);
+                        alert('Bienvenido de nuevo, ' + result.user.nombre + '!');
+                        
+                        // Redirigir a la página de Estado después de iniciar sesión correctamente
+                        setTimeout(() => {
+                            window.location.href = 'Estado.html';
+                        }, 1000);
+                    }
+                });
+            });
+    </script>
 </body>
 <footer>
     <p>&copy; 2024 Improve Your Health. </p>

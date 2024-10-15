@@ -40,26 +40,36 @@
             document.getElementById('register-form').addEventListener('submit', async (event) => {
                 event.preventDefault(); // Evita el envío predeterminado del formulario
 
-                const response = await fetch('http://localhost:3000/register', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        nombre: document.getElementById('register-name').value, // Obtén el valor del campo
-                        correo: document.getElementById('register-email').value, // Obtén el valor del campo
-                        contraseña: document.getElementById('register-password').value // Obtén el valor del campo
-                    }),
-                });
+                try {
+                    const response = await fetch('http://localhost:3000/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            nombre: document.getElementById('register-name').value, // Obtén el valor del campo
+                            correo: document.getElementById('register-email').value, // Obtén el valor del campo
+                            contraseña: document.getElementById('register-password').value // Obtén el valor del campo
+                        }),
+                    });
 
-                if (!response.ok) {
-                    const errorText = await response.text(); // Obtener el texto de error
-                    console.error('Error en la solicitud:', errorText);
-                    alert('Error en el registro: ' + errorText);
-                } else {
-                    const result = await response.json();
-                    console.log('Registro exitoso:', result);
-                    alert('Registro exitoso. Bienvenido, ' + result.nombre + '!');
+                    if (!response.ok) {
+                        const errorText = await response.text(); // Obtener el texto de error
+                        console.error('Error en la solicitud:', errorText);
+                        alert('Error en el registro: ' + errorText);
+                    } else {
+                        const result = await response.json();
+                        console.log('Registro exitoso:', result);
+                        alert('Registro exitoso. Bienvenido, ' + result.nombre + '!');
+
+                        // Redirigir a la página de "Estado" después de 1 segundo
+                        setTimeout(() => {
+                            window.location.href = 'Estado.html';
+                        }, 1000); // Esperar 1 segundo antes de redirigir
+                    }
+                } catch (error) {
+                    console.error('Error en la solicitud:', error);
+                    alert('Ocurrió un error en la conexión');
                 }
             });
         });

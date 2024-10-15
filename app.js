@@ -27,6 +27,7 @@ mongoose.connect(MONGO_URI)
 
 // Usar las rutas de registro
 app.use('/register', registerRoutes);
+app.use('/login', loginRoutes);
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;
