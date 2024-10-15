@@ -19,6 +19,7 @@ router.post('/login', async (req, res) => {
 
         // Compara las contraseñas
         const isMatch = await bcrypt.compare(contraseña, user.contraseña);
+        console.log('¿Contraseña coincide?:', isMatch);
 
         if (!isMatch) {
             return res.status(400).json({ message: 'Contraseña incorrecta' });
