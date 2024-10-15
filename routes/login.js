@@ -1,6 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
-const User = require('./models/user'); // Asegúrate de que la ruta es correcta
+const User = require('../models/User'); // Asegúrate de que la ruta es correcta
 const router = express.Router();
 
 router.post('/login', async (req, res) => {
