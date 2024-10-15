@@ -55,9 +55,11 @@
                 if (!response.ok) {
                     const errorText = await response.text(); // Obtener el texto de error
                     console.error('Error en la solicitud:', errorText);
+                    alert('Error en el registro: ' + errorText);
                 } else {
                     const result = await response.json();
                     console.log('Registro exitoso:', result);
+                    alert('Registro exitoso. Bienvenido, ' + result.nombre + '!');
                 }
             });
         });
