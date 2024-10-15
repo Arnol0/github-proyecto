@@ -1,35 +1,31 @@
 const express = require('express');
-const bcrypt = require('bcryptjs');
-const User = require('../../models/User'); // Ajusta la ruta según tu estructura de carpetas
-
 const router = express.Router();
+const User = require('../../models/User'); // Asegúrate de que la ruta hacia el modelo es correcta
+const bcryptjs = require('bcryptjs');
 
-// Ruta para inicio de sesión
+// Ruta para manejar el inicio de sesión
 router.post('/', async (req, res) => {
     const { correo, contraseña } = req.body;
 
-    if (!correo || !contraseña) {
-        return res.status(400).json({ message: 'Faltan campos requeridos' });
-    }
-
     try {
-        // Verificar si el usuario existe
+        // Buscar al usuario en la base de datos por su correo
         const user = await User.findOne({ correo });
+
         if (!user) {
-            return res.status(400).json({ message: 'El usuario no está registrado' });
+            return res.status(400).json({ message: 'Usuario no encontrado' });
         }
 
-        // Comparar la contraseña
-        const isMatch = await bcrypt.compare(contraseña, user.contraseña);
+        // Verificar si la contraseña es correcta
+        const isMatch = await bcryptjs.compare(contraseña, user.contraseña);
         if (!isMatch) {
             return res.status(400).json({ message: 'Contraseña incorrecta' });
         }
 
-        // Si la contraseña coincide, devolver éxito
-        res.status(200).json({ message: 'Inicio de sesión exitoso', nombre: user.nombre });
-    } catch (err) {
-        console.error('Error en el inicio de sesión:', err);
-        res.status(500).json({ message: 'Error al iniciar sesión' });
+        // Si la autenticación es correcta, responde con éxito
+        res.json({ message: 'Inicio de sesión exitoso', user });
+    } catch (error) {
+        console.error('Error al iniciar sesión:', error);
+        res.status(500).json({ message: 'Error del servidor' });
     }
 });
 

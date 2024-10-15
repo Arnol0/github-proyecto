@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const registerRoutes = require('./routes/register'); // Importar rutas
-
+const loginRoutes = require('./routes/');
 const app = express();
 
 app.use(cors());
