@@ -4,8 +4,10 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const registerRoutes = require('./routes/register'); // Importar rutas
-const loginRoutes = require('./routes/');
+const registerRoutes = require('./routes/register'); 
+
+const loginRoutes = require('./routes/login');
+
 const app = express();
 
 app.use(cors());
