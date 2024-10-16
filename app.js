@@ -30,7 +30,7 @@ mongoose.connect(MONGO_URI)
 // Usar las rutas de registro
 app.use('/register', registerRoutes);
 app.use(express.json()); // Importante para manejar JSON
-app.use('/login', require('./routes/login'));
+app.use('/login', loginRoutes);
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;
