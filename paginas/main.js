@@ -18,7 +18,11 @@ async function handleRegister(event) {
     const data = await response.json();
 
     if (response.ok) {
-        alert(data.message);  // Mensaje de éxito
+        alert(data.message); 
+        
+        setTimeout(() => {
+            window.location.href = 'Estado.html'; // Redirige a la página "Estado" tras el éxito
+        }, 1000); // Mensaje de éxito
     } else {
         alert(data.message || 'Error desconocido'); // Mensaje de error
     }
